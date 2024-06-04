@@ -1,6 +1,6 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
  const slideData=[
 {
@@ -22,19 +22,18 @@ import "swiper/css";
 </script>
 
 <template>
-  <div class="min-h-screen relative">
-    <span class="absolute top-[50%] left-[50%] z-[2]">
+  <div class="min-h-screen relative flex justify-center items-center">
+    <div class="absolute z-[2]">
     <LoginForm/>
-    </span>
+    </div>
      <swiper
       :slides-per-view="1"
       :loop="true"
       :autoplay="{
-        delay: 1500,
+        delay: 2000,
         disableOnInteraction: false,
       }"
-      effect="fade"
-      :modules="[Autoplay, EffectFade]"
+      :modules="[Autoplay]"
       class="h-screen"
     >
       <SwiperSlide v-for="(slide, index) in slideData" :key="index">
