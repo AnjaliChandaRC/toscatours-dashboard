@@ -15,11 +15,17 @@ import "swiper/css";
 {
     img:"/assets/images/png/slider-img-4.png",
 },
+{
+    img:"/assets/images/png/slider-img-5.png",
+},
 ];
 </script>
 
 <template>
   <div class="min-h-screen relative">
+    <span class="absolute top-[50%] left-[50%] z-[2]">
+    <LoginForm/>
+    </span>
      <swiper
       :slides-per-view="1"
       :loop="true"
@@ -35,7 +41,7 @@ import "swiper/css";
         <NuxtImg
           :src= "slide.img"
           :alt="'slide' + (index + 1)"
-          class="absolute top-0 left-0 w-full h-full object-cover"
+          class="w-full h-full object-cover"
         />
       </SwiperSlide>
     </swiper>
