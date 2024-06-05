@@ -25,7 +25,7 @@ const sidebarList = [
 </script>
 
 <template>
-    <div class="w-[256px] bg-white min-h-screen pt-6 pb-10 flexjustify-end">
+    <div class="w-[256px] bg-white min-h-screen pt-6 pb-10 flex justify-between flex-col">
         <div>
             <NuxtLink to="/">
                 <NuxtImg src="/assets/images/svg/form-logo.svg" alt="logo"
@@ -42,8 +42,14 @@ const sidebarList = [
                 </div>
             </div>
         </div>
-        <div class="mx-[33px] px-[30px] py-[11px] bg-[#f5f5f5]">
-            <p class="text-[13px] font-semibold text-black">Daten importieren</p>
+        <div
+            class="mx-[33px] px-[10px] py-[28px] bg-[#f5f5f5] text-center rounded-xl border border-dotted border-[#DEDEDE]">
+            <NuxtImg src="/assets/images/svg/sidebar-plus.svg" alt="sidebar-plus" class="w-[39px] h-[39px] mx-auto" />
+            <p class="text-[13px] font-semibold text-black pt-2">Daten importieren</p>
+            <p class="text-[9px] font-medium pt-1"><span class="text-[#EC6707] underline">Datei aussuchen</span> <span
+                    class="text-[#ADADAE]">oder
+                    hierher
+                    ziehen.</span></p>
         </div>
     </div>
 </template>
