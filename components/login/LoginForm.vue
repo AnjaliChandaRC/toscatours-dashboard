@@ -1,22 +1,37 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const passwordVisible = ref(false);
+const email = ref('');
+const password = ref('');
+const router = useRouter();
+
 function togglePasswordVisibility() {
   passwordVisible.value = !passwordVisible.value;
 }
+
+function submitForm(event) {
+  event.preventDefault();
+  if (email.value && password.value) {
+    router.push('/dashboardLayout');
+  } else {
+    alert('Please fill in both the email and password fields.');
+  }
+}
 </script>
+
 <template>
   <div class="bg-white rounded-3xl p-5 sm:p-7 xl:p-16 m-3 sm:m-0">
     <NuxtImg src="/assets/images/svg/form-logo.svg" alt="logo" class="w-[320px] h-[160px] lg:w-[360px] lg:h-[182px]" />
     <p class="text-xl font-bold text-black pt-6">Schön, dich wiederzusehen</p>
-    <form action="" class="pt-6">
+    <form @submit="submitForm" class="pt-6">
       <p class="text-[11px] text-[#4A4A4A] ps-2">Login</p>
-      <input required type="email" placeholder="Email or phone number"
+      <input required v-model="email" type="email" placeholder="Email or phone number"
         class="w-full py-[11px] px-4 text-base font-medium text-black placeholder:text-[#ADADAE] bg-[#f5f5f5] border border-[#DEDEDE] rounded-3xl mt-1">
       <p class="text-[11px] text-[#4A4A4A] ps-2 pt-4">Password</p>
       <div class="relative">
-        <input required :type="passwordVisible ? 'text' : 'password'" placeholder="Email password"
+        <input required v-model="password" :type="passwordVisible ? 'text' : 'password'" placeholder="Email password"
           class="w-full py-[11px] px-4 text-base font-medium text-black placeholder:text-[#ADADAE] bg-[#f5f5f5] border border-[#DEDEDE] rounded-3xl mt-1">
         <span @click="togglePasswordVisibility">
           <NuxtImg :src="passwordVisible ? '/assets/images/svg/open-eye.svg' : '/assets/images/svg/close-eye.svg'"
@@ -34,7 +49,7 @@ function togglePasswordVisibility() {
         </div>
         <p class="text-xs text-[#EC6707] cursor-pointer">Forgot password?</p>
       </div>
-      <button
+      <button type="submit"
         class="text-xl font-medium text-[#4A4A4A] bg-[#DEDEDE] rounded-3xl py-[8.5px] w-full mt-6 transition-all duration-300 ease-in-out hover:text-[#EC6707] border-[2px] border-transparent hover:border-[#EC6707] hover:bg-white">Log
         in</button>
     </form>

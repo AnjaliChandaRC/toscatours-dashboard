@@ -1,6 +1,5 @@
   <template>
     <div>
-      <!-- <LoginSlider/> -->
-      <DashboardLayout />
+      <LoginSlider/>
     </div>
   </template>
