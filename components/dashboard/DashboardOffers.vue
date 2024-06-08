@@ -1,1 +1,8 @@
-<template>offers</template>
+<template>
+    <div class="w-[528px] bg-white p-6 rounded-3xl">
+        <div class="flex justify-between items-center">
+            <h4 class="text-xl font-medium text-black">Top Angebote</h4>
+            <CommonSelect/>
+        </div>
+    </div>
+</template>

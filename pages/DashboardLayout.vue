@@ -9,7 +9,7 @@
             <div class="px-12">
                 <DashboardCards />
             </div>
-            <div class="flex px-12">
+            <div class="flex px-12 gap-8">
                 <DashboardGraph />
                 <DashboardOffers />
             </div>
